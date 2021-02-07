@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RandomNumbersApp.Controllers;
 using RandomNumbersApp.Data;
 using RandomNumbersApp.Models;
 
@@ -45,6 +46,8 @@ namespace RandomNumbersApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddSingleton<MatchService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

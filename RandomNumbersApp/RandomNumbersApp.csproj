@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="3.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.11" />
@@ -28,6 +29,24 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210206195134_CreateGameSchema.cs" />
+    <Compile Remove="Data\Migrations\20210206195134_CreateGameSchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210206195926_CreateGameSchema.cs" />
+    <Compile Remove="Data\Migrations\20210206195926_CreateGameSchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210207104502_CreateGameSchema.cs" />
+    <Compile Remove="Data\Migrations\20210207104502_CreateGameSchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210207104928_CreateGameSchema.cs" />
+    <Compile Remove="Data\Migrations\20210207104928_CreateGameSchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210207105431_CreateGameSchema.cs" />
+    <Compile Remove="Data\Migrations\20210207105431_CreateGameSchema.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\FrontEnd\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
