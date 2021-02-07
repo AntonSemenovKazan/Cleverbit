@@ -127,7 +127,8 @@ namespace RandomNumbersApp.Services
                     {
                         User = user,
                         Match = currentMatch,
-                        Number = random.Next(MaxNumber)
+                        Number = random.Next(MaxNumber),
+                        CreationTime = DateTime.Now
                     };
                     dbContext.Add(participant);
 
