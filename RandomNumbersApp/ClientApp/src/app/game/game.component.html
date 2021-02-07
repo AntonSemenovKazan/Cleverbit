@@ -10,15 +10,16 @@
     </p>
 </div>
 <div *ngIf="!isAuth">
+    <p>Login to play.</p>
     <p class="match-actions">
         <button class="btn btn-secondary" (click)="refresh()">Refresh results</button>
     </p>
 </div>
 
-<h3>Winners</h3>
+<h3>Last winners</h3>
 <p *ngIf="!matchResults"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="matchResults">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="matchResults?.length > 0">
     <thead>
     <tr>
         <th>Expiration</th>
@@ -34,3 +35,4 @@
     </tr>
     </tbody>
 </table>
+<p *ngIf="matchResults?.length === 0">No winners.</p>
