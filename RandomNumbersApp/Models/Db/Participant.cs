@@ -1,8 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using RandomNumbersApp.Models;
 
-namespace RandomNumbersApp
+namespace RandomNumbersApp.Models.Db
 {
     public class Participant
     {

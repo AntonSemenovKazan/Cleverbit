@@ -1,16 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using RandomNumbersApp.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using RandomNumbersApp.Data;
+using RandomNumbersApp.Models.Db;
+using RandomNumbersApp.Models.FrontEnd;
 
-namespace RandomNumbersApp.Controllers
+namespace RandomNumbersApp.Services
 {
-
-    public class MatchService
+    public class MatchService : IMatchService
     {
         private readonly int durationInSec;
 
@@ -29,7 +30,6 @@ namespace RandomNumbersApp.Controllers
 
         public async Task FinishInProcessMatches(ApplicationDbContext dbContext)
         {
-            // todo lock via semaphore
             var now = DateTime.Now;
 
             var matches = await dbContext.Matches.Where(m => m.Winner == null && m.Expiration < now)

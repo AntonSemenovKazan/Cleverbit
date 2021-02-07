@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RandomNumbersApp.Data;
+using RandomNumbersApp.Models.FrontEnd;
+using RandomNumbersApp.Services;
 
 namespace RandomNumbersApp.Controllers
 {
@@ -12,9 +14,9 @@ namespace RandomNumbersApp.Controllers
     public class MatchController : ControllerBase
     {
         private readonly ApplicationDbContext dbContext;
-        private readonly MatchService matchService;
+        private readonly IMatchService matchService;
 
-        public MatchController(ApplicationDbContext dbContext, MatchService matchService)
+        public MatchController(ApplicationDbContext dbContext, IMatchService matchService)
         {
             this.dbContext = dbContext;
             this.matchService = matchService;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RandomNumbersApp.Controllers
+namespace RandomNumbersApp.Models.FrontEnd
 {
     public class MatchResult
     {

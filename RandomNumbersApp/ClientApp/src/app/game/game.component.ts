@@ -1,17 +1,15 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {CountdownConfig, CountdownEvent, CountdownStatus} from 'ngx-countdown/interfaces';
+import {CountdownConfig, CountdownEvent} from 'ngx-countdown/interfaces';
 import {AuthorizeService} from '../../api-authorization/authorize.service';
 import {take} from 'rxjs/operators';
 
 @Component({
-    selector: 'app-fetch-data',
-    templateUrl: './fetch-data.component.html',
-    styleUrls: ['./fetch-data.component.scss']
+    selector: 'app-game',
+    templateUrl: './game.component.html',
+    styleUrls: ['./game.component.scss']
 })
-export class FetchDataComponent implements OnInit {
-    public forecasts: WeatherForecast[];
-
+export class GameComponent implements OnInit {
     public matchResults: MatchResult[];
 
     public currentMatch: ParticipantMatch;
@@ -83,13 +81,6 @@ interface MatchResult {
     expiration: string;
     winnerName: string;
     winnerNumber: number;
-}
-
-interface WeatherForecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
 }
 
 interface ParticipantMatch {

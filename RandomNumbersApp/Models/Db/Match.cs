@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using RandomNumbersApp.Models;
 
-namespace RandomNumbersApp
+namespace RandomNumbersApp.Models.Db
 {
     public class Match
     {
